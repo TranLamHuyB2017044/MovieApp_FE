@@ -15,11 +15,11 @@ export default defineConfig({
     port: 5000,
     proxy:{
       "/api/user":{
-        target: 'http://localhost:6060/',
+        target: 'https://movies-app-.cyclic.app/api/user',
         changeOrigin: true,
       },
       "/api/movies":{
-        target: 'http://localhost:6060/',
+        target: 'https://movies-app-.cyclic.app/api/movies',
         changeOrigin: true,
       },
     },
