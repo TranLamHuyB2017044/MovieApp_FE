@@ -15,11 +15,11 @@ export default defineConfig({
     port: 5000,
     proxy:{
       "/api/user":{
-        target: 'http://localhost:5050/',
+        target: 'http://localhost:6060/',
         changeOrigin: true,
       },
       "/api/movies":{
-        target: 'http://localhost:5050/',
+        target: 'http://localhost:6060/',
         changeOrigin: true,
       },
     },
