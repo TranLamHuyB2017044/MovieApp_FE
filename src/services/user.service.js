@@ -1,7 +1,7 @@
 import createApiClient from './api.service';
 
 class userService {
-    constructor (baseUrl = '/api/user'){
+    constructor (baseUrl = 'https://movies-app-.cyclic.app/api/user'){
         this.api = createApiClient(baseUrl);
     }
     async detailUser(id){

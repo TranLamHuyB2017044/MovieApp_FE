@@ -1,7 +1,7 @@
 import createApiClient from './api.service';
 
 class MovieService {
-    constructor (baseUrl = '/api/movies'){
+    constructor (baseUrl = 'https://movies-app-.cyclic.app/api/movies'){
         this.api = createApiClient(baseUrl);
     }
     async getAll(){
