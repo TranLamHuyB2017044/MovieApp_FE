@@ -3,7 +3,7 @@
     <div class="row">
       <Splide :options="options" class="d-lg-flex d-none" aria-label="My Favorite Images">
         <SplideSlide class="Moives-box" v-for="card in cards" :key="card.id">
-          <img  :src="`${card.img}`" class="movie-box-img" />
+          <img  :src="card.img" class="movie-box-img" />
           <router-link @click="scrollToTop" :to="{ name: 'detail', params: { slug: card.slug }}">
             <section class="box-text">
               <a href="#" class="watch-btn">
@@ -88,12 +88,12 @@ export default defineComponent({
       cards: [
         {
           id: 1,
-          img: "https://1drv.ms/i/s!Ardor-Uti0bnvGanJS0EJcW6Gx3a",
+          img: "../assets/arcane.jpg",
           slug: "arcane",
         },
         {
           id: 2,
-          img: "https://1drv.ms/i/s!Ardor-Uti0bnvGanJS0EJcW6Gx3a",
+          img: "../assets/aquaman.jpg",
           slug: "aquaman",
         },
         {
