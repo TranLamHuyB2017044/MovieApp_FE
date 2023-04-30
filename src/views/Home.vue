@@ -7,7 +7,6 @@
         <div class="heading">
           <h2 class="heading-title">Popular Movies</h2>
         </div>
-        <!-- content -->
         <div class="popular-content">
           <popular-moives />
         </div>

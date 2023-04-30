@@ -3,7 +3,12 @@
     <div class="row">
       <Splide :options="options" class="d-lg-flex d-none" aria-label="My Favorite Images">
         <SplideSlide class="Moives-box" v-for="card in cards" :key="card.id">
-          <img  :src="card.img" class="movie-box-img" />
+          <img  :src="`${card.img}`" class="movie-box-img" />
+          <!-- <img
+              :src="`https://i.ytimg.com/vi/${card.videoId}/maxresdefault.jpg?sqp=-oaymwEcCNACELwBSFTyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCN-p51NBQHBICMaXtlW6-2-F5h5Q`"
+              class=" card-img-top movie-img"
+              :alt="card.name"
+            /> -->
           <router-link @click="scrollToTop" :to="{ name: 'detail', params: { slug: card.slug }}">
             <section class="box-text">
               <a href="#" class="watch-btn">
@@ -15,7 +20,12 @@
       </Splide>
       <Splide :options="optionIpad" class="d-lg-none d-md-block d-sm-none d-none" aria-label="My Favorite Images">
         <SplideSlide class="Moives-box" v-for="card in cards" :key="card.id">
-          <img  :src="card.img" class="movie-box-img" />
+          <img  :src="`${card.img}`" class="movie-box-img" />
+          <!-- <img
+              :src="`https://i.ytimg.com/vi/${card.videoId}/maxresdefault.jpg?sqp=-oaymwEcCNACELwBSFTyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCN-p51NBQHBICMaXtlW6-2-F5h5Q`"
+              class="card-img-top movie-img"
+              :alt="card.name"
+            /> -->
           <router-link @click="scrollToTop" :to="{ name: 'detail', params: { slug: card.slug }}">
             <section class="box-text">
               <a href="#" class="watch-btn">
@@ -27,7 +37,12 @@
       </Splide>
       <Splide :options="optionMobile" class="d-md-none d-flex" aria-label="My Favorite Images">
         <SplideSlide class="Moives-box" v-for="card in cards" :key="card.id">
-          <img  :src="card.img" class="movie-box-img" />
+          <img  :src="`${card.img}`" class="movie-box-img" />
+          <!-- <img
+              :src="`https://i.ytimg.com/vi/${card.videoId}/maxresdefault.jpg?sqp=-oaymwEcCNACELwBSFTyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCN-p51NBQHBICMaXtlW6-2-F5h5Q`"
+              class="card-img-top movie-img"
+              :alt="card.name"
+            /> -->
           <router-link @click="scrollToTop" :to="{ name: 'detail', params: { slug: card.slug }}">
             <section class="box-text">
               <a href="#" class="watch-btn">
@@ -44,6 +59,8 @@
 <script>
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import { defineComponent } from "vue";
+// import { useFilmStore } from "../stores/film";
+
 export default defineComponent({
   components: {
     Splide,
@@ -84,70 +101,74 @@ export default defineComponent({
   // },
   data() {
     return {
-      // posts:{},
+      // cards:[],
       cards: [
         {
           id: 1,
-          img: "../assets/arcane.jpg",
+          img: "./src/assets/arcane.jpg",
           slug: "arcane",
         },
         {
           id: 2,
-          img: "../assets/aquaman.jpg",
+          img: "./src/assets/aquaman.jpg",
           slug: "aquaman",
         },
         {
           id: 3,
-          img: "../assets/joker.jpg",
+          img: "./src/assets/joker.jpg",
           slug: "joker",
         },
         {
           id: 4,
-          img: "../assets/ant-man_4.jpg",
+          img: "./src/assets/ant-man_4.jpg",
           slug: "ant-man",
         },
         {
           id: 5,
-          img: "../assets/endgame.jpg",
+          img: "./src/assets/endgame.jpg",
           slug: "avengers-endgame",
         },
         {
           id: 6,
-          img: "../assets/godzilla.jpg",
+          img: "./src/assets/godzilla.jpg",
           slug: "godzilla",
         },
         {
           id: 7,
-          img: "../assets/bumblebee.jpg",
+          img: "./src/assets/bumblebee.jpg",
           slug: "bumblebee",
         },
         {
           id: 8,
-          img: "../assets/tenet.jpg",
+          img: "./src/assets/tenet.jpg",
           slug: "tenet",
         },
         {
           id: 9,
-          img: "../assets/jumanji.jpg",
+          img: "./src/assets/jumanji.jpg",
           slug: "jumanji",
         },
         {
           id: 10,
-          img: "../assets/thienmenhanhhung.jpg",
+          img: "./src/assets/thienmenhanhhung.jpg",
           slug: "thien-menh-anh-hung",
         },
         {
           id: 11,
-          img: "../assets/dragontrain.jpg",
+          img: "./src/assets/dragontrain.jpg",
           slug: "ht-train-your-dragon",
         },
         {
           id: 12,
-          img: "../assets/glass.jpg",
+          img: "./src/assets/glass.jpg",
           slug: "glass",
         },
       ],
     };
+  },
+  async  mounted() {
+    this.cards = await this.useFilm.getAllFilms()
+    this.cards= this.useFilm.films;
   },
   methods: {
     scrollToTop() {
@@ -160,7 +181,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.Moives-box {
+/* .Moives-box {
   position: relative;
   font-size: 16px;
   width: 100%;
@@ -197,7 +218,7 @@ export default defineComponent({
   );
   overflow: hidden;
   text-shadow: -1px -1px 50px rgba(0, 0, 0, 1);
-}
+} */
 
 .bx {
   background: #0088a9;
