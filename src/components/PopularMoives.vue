@@ -88,12 +88,12 @@ export default defineComponent({
       cards: [
         {
           id: 1,
-          img: "../assets/arcane.jpg",
+          img: "https://1drv.ms/i/s!Ardor-Uti0bnvGanJS0EJcW6Gx3a",
           slug: "arcane",
         },
         {
           id: 2,
-          img: "../assets/aquaman.jpg",
+          img: "https://1drv.ms/i/s!Ardor-Uti0bnvGanJS0EJcW6Gx3a",
           slug: "aquaman",
         },
         {
