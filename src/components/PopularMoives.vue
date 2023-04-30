@@ -15,7 +15,7 @@
       </Splide>
       <Splide :options="optionIpad" class="d-lg-none d-md-block d-sm-none d-none" aria-label="My Favorite Images">
         <SplideSlide class="Moives-box" v-for="card in cards" :key="card.id">
-          <img  :src="`${card.img}`" class="movie-box-img" />
+          <img  :src="card.img" class="movie-box-img" />
           <router-link @click="scrollToTop" :to="{ name: 'detail', params: { slug: card.slug }}">
             <section class="box-text">
               <a href="#" class="watch-btn">
@@ -27,7 +27,7 @@
       </Splide>
       <Splide :options="optionMobile" class="d-md-none d-flex" aria-label="My Favorite Images">
         <SplideSlide class="Moives-box" v-for="card in cards" :key="card.id">
-          <img  :src="`${card.img}`" class="movie-box-img" />
+          <img  :src="card.img" class="movie-box-img" />
           <router-link @click="scrollToTop" :to="{ name: 'detail', params: { slug: card.slug }}">
             <section class="box-text">
               <a href="#" class="watch-btn">
