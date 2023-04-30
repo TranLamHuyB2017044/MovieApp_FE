@@ -5,16 +5,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "predeploy":"npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@splidejs/vue-splide": "^0.6.12",
     "axios": "^1.3.4",
     "bootstrap": "^5.2.3",
-    "gh-pages": "^5.0.0",
     "pinia": "^2.0.33",
     "sweetalert2": "^11.7.3",
     "vee-validate": "^4.7.4",
@@ -26,6 +23,5 @@
     "@fortawesome/fontawesome-free": "^6.3.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "vite": "^4.0.0"
-  },
-  "homepage": "https://tranlamhuyb2017044.github.io/MovieApp_FE/"
+  }
 }

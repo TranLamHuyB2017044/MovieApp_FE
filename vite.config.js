@@ -12,7 +12,7 @@ export default defineConfig({
     }
   },
   server:{
-    port: 5000,
+    port: 'https://movies-app-.cyclic.app',
     proxy:{
       "/api/user":{
         target: 'https://movies-app-.cyclic.app/api/user',
