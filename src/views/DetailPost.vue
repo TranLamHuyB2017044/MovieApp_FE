@@ -38,22 +38,14 @@
                 <button @click="changeFavorite" v-else class="btn-favorite  d-lg-none"><i class="fa-solid fa-trash-can"></i></button>
             </div>
         </div>
-        <h4>You may also like</h4>
-        <a href="#">
-            <popular-moives/>
-        </a>
     </div>
 </template>
 <script>
 import MovieService from "../services/movie.service";
-import PopularMoives from "../components/PopularMoives.vue";
 import MyAlert from "../services/MyAlert";
 import { useUsersStore } from "../stores/user";
 export default {
     props: { slug: { type: String, required: true } },
-    components:{
-        PopularMoives
-    },
     setup() {
         const useUser = useUsersStore()
         return {useUser}

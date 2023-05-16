@@ -2,15 +2,6 @@
   <div class="container">
     <div class="row">
       <sidebar-home />
-      <!-- Popular -->
-      <section class="popular container mt-5" ref="popular">
-        <div class="heading">
-          <h2 class="heading-title">Popular Movies</h2>
-        </div>
-        <div class="popular-content">
-          <popular-moives />
-        </div>
-      </section>
       <section class="moives container mt-5" id="movies">
         <div class="heading">
           <h2 class="heading-title">Movies And Show</h2>
@@ -47,12 +38,10 @@
 // import MovieService from "../services/movie.service";
 import { useFilmStore } from "../stores/film";
 import SidebarHome from "../components/SidebarHome.vue";
-import PopularMoives from "../components/PopularMoives.vue";
 
 export default {
   components: {
     SidebarHome,
-    PopularMoives,
   },
   data() {
     return {
